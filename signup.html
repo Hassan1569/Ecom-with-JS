@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom Js | Signup</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/config.css">
+</head>
+
+<body class="bg-light">
+    <div class="preloader active">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <main class="form-signin col-lg-4 col-md-5 text-center">
+            <form>
+                <img class="mb-4" src="images/logo.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 fw-normal text-uppercase">signup</h1>
+    
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Your Name here..." maxlength="20" onkeyup="nameValidation()">
+                    <label for="name">Name Here...</label>
+                </div>
+                <div class="error" id="nameErr">name</div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email here..." maxlength="40" onkeyup="emailValidation()">
+                    <label for="email">Email Address Here...</label>
+                </div>
+                <div class="error" id="emailErr">email</div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter Your Password here..." maxlength="20" onkeyup="pwdValidation()">
+                    <label for="pwd">Create Password Here...</label>
+                </div>
+                <div class="error" id="pwdErr">password</div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="cpwd" placeholder="Enter Your Confirm Password here..." maxlength="20" onkeyup="cpwdValidation()">
+                    <label for="cpwd">Confirm Password Here...</label>
+                </div>
+                <div class="error" id="cpwdErr">confirm password</div>
+
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="button" onclick="validation()">Sign up</button>
+                <p class="mt-3 mb-3 text-muted">I have an Account? <a href="login.html">Login</a></p>
+            </form>
+        </main>
+    </div>
+
+</body>
+<script src="js/sweetalert2.min.js"></script>
+<script src="js/signup-validation.script.js"></script>
+<script src="js/script.js"></script>
+</html>

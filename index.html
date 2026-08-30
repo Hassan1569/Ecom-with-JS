@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecom Js</title>
+        <link rel="shortcut icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/config.css">
+
+    </head>
+
+    <body>
+        <div class="preloader active">
+            <div class="spinner-border text-primary" role="status"></div>
+        </div>
+
+        <nav></nav>
+
+        <section class="sliderSection">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade"
+                data-bs-ride="carousel">
+                <div class="carousel-inner" style="height: 80vh;">
+                    <div
+                        class="carousel-item active d-flex align-items-center h-100"
+                        style="background-image: url(images/slider/slide\ 1.jpg);"
+                        data-bs-interval="3000">
+                        <div class="container">
+                            <h1
+                                class="display-2 text-start text-dark text-uppercase">product
+                                detail</h1>
+                            <p class="text-start text-dark fs-5 mt-3">This is
+                                Ecom website using with JS.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item d-flex align-items-center h-100"
+                        style="background-image: url(images/slider/slide\ 2.jpg);"
+                        data-bs-interval="3000">
+                        <div class="container">
+                            <h1
+                                class="display-2 text-center text-dark text-uppercase">products</h1>
+                            <p class="text-center text-dark fs-5 mt-3">This is
+                                Ecom website using with JS.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item d-flex align-items-center h-100"
+                        style="background-image: url(images/slider/slide\ 3.jpg);"
+                        data-bs-interval="3000">
+                        <div class="container">
+                            <h1
+                                class="display-2 text-start text-light text-uppercase">product
+                                detail</h1>
+                            <p class="text-start text-light fs-5 mt-3">This is
+                                Ecom website using with JS.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </section>
+
+        <section class="container mt-5 fruitsSection">
+            <div class="p-5 mb-4 bg-light rounded-3 secOne">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold text-light">Custom
+                        jumbotron</h1>
+                    <p class="col-md-8 fs-4 text-light">Using a series of
+                        utilities, you can create this jumbotron, just
+                        like the one
+                        in previous versions of Bootstrap. Check out the
+                        examples below for how you can remix and restyle it
+                        to your liking.</p>
+                    <button class="btn btn-primary btn-lg" type="button">Example
+                        button</button>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div class="h-100 p-5 text-bg-dark rounded-3 secTwo">
+                        <h2 class="text-dark">Change the background</h2>
+                        <p class="text-dark">Swap the background-color utility
+                            and add a `.text-*` color utility to mix up
+                            the jumbotron look.
+                            Then, mix and match with additional component themes
+                            and more.</p>
+                        <button class="btn btn-dark" type="button">Example
+                            button</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        class="h-100 p-5 bg-light border rounded-3 secThree text-end">
+                        <h2>Add borders</h2>
+                        <p>Or, keep it light and add a border for some added
+                            definition to the boundaries of your content.
+                            Be
+                            sure to look under the hood at the source HTML here
+                            as we've adjusted the alignment and sizing
+                            of
+                            both column's content for equal-height.</p>
+                        <button class="btn btn-success" type="button">Example
+                            button</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="productsSection my-5 py-5">
+            <div class="container">
+                <div
+                    class="filter d-flex justify-content-center align-items-center flex-wrap gap-4">
+                    <button class="btn btn-primary text-capitalize col-2"
+                        onclick="fetchProducts('all')">all</button>
+                </div>
+                <div class="row mt-5">
+
+                </div>
+            </div>
+        </section>
+
+        <div class="container px-4 pb-5">
+            <div
+                class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 pb-5">
+                <div class="d-flex flex-column align-items-start gap-2">
+                    <h3 class="display-4 ">Our Services</h3>
+                    <p class="text-muted">Paragraph of text beneath the heading
+                        to explain the heading. We'll add onto it
+                        with another sentence and probably just keep going until
+                        we run out of words.</p>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    <div class="d-flex flex-column gap-2">
+                        <a
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"
+                            style="width: 2em; height: 2em;">
+                            <i class="bi bi-headset"></i>
+                        </a>
+                        <h4 class="fw-semibold mb-0">Customer Care</h4>
+                        <p class="text-muted">Paragraph of text beneath the
+                            heading to explain the heading.</p>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"
+                            style="width: 2em; height: 2em;">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h4 class="fw-semibold mb-0">Shipping</h4>
+                        <p class="text-muted">Paragraph of text beneath the
+                            heading to explain the heading.</p>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"
+                            style="width: 2em; height: 2em;">
+                            <i class="bi bi-basket2-fill"></i>
+                        </div>
+                        <h4 class="fw-semibold mb-0">Order</h4>
+                        <p class="text-muted">Paragraph of text beneath the
+                            heading to explain the heading.</p>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"
+                            style="width: 2em; height: 2em;">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <h4 class="fw-semibold mb-0">Shop</h4>
+                        <p class="text-muted">Paragraph of text beneath the
+                            heading to explain the heading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="offcanvasRight"></div>
+
+        <footer></footer>
+
+    </body>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/component.script.js"></script>
+    <script src="js/script.js"></script>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom Js</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/config.css">
+
+</head>
+
+<body>
+    <div class="preloader active">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <nav></nav>
+
+    <section class="bannerSection py-5 bg-primary">
+        <div class="container py-5">
+            <h1 class="display-2 text-center text-light text-uppercase">Checkout</h1>
+            <p class="text-center text-light fs-5 mt-3">This is Ecom website
+                using with JS.</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <main>
+
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-primary">Your cart</span>
+                        <span class="badge bg-primary rounded-pill" id="cartCount">3</span>
+                    </h4>
+                    <ul class="list-group mb-3" id="cartContainerCheckout">
+
+
+                    </ul>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation was-validated" novalidate="">
+                        <div class="row g-3">
+
+                            <div class="col-12">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="" value="ali" required=""
+                                    readonly>
+                                <div class="invalid-feedback">
+                                    Valid name is required.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St"
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Please enter your shipping address.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address2" class="form-label">Address 2 <span
+                                        class="text-muted">(Optional)</span></label>
+                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" required="">
+                                    <option value="">Choose...</option>
+                                    <option value="pakistan" selected>Pakistan</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required="">
+                                    <option value="">Choose...</option>
+                                    <option value="sindh" selected>Sindh</option>
+                                    <option value="balochistan">Balochistan</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="kpk">KPK</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Zip code required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Payment</h4>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="COD" name="paymentMethod" type="radio" class="form-check-input" required=""
+                                    onclick="removePaymentCard()" checked>
+                                <label class="form-check-label" for="COD" onclick="removePaymentCard()">Cash On
+                                    Delivery</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input"
+                                    onclick="paymentCard()" required="">
+                                <label class="form-check-label" for="debit" onclick="paymentCard()">Debit card</label>
+                            </div>
+                        </div>
+
+                        <div class="row gy-3" id="paymentCardContainer">
+
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <div id="offcanvasRight"></div>
+
+    <footer></footer>
+
+</body>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/component.script.js"></script>
+<script src="js/script.js"></script>
+
+
+
+<script>
+    function paymentCard() {
+        document.querySelector("#paymentCardContainer").innerHTML = `
+        <div class="col-md-6">
+            <label for="cc-name" class="form-label">Name on card</label>
+            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+            <small class="text-muted">Full name as displayed on card</small>
+            <div class="invalid-feedback">
+                Name on card is required
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="cc-number" class="form-label">Credit card number</label>
+            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+            <div class="invalid-feedback">
+                Credit card number is required
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="cc-expiration" class="form-label">Expiration</label>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+            <div class="invalid-feedback">
+                Expiration date required
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="cc-cvv" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+            <div class="invalid-feedback">
+                Security code required
+            </div>
+        </div>
+        `
+    }
+
+    function removePaymentCard() {
+        document.querySelector("#paymentCardContainer").innerHTML = "";
+    }
+
+    if (sessionStorage.getItem("loginStatus")) {
+        let userId = sessionStorage.getItem("loginStatus");
+        if (localStorage.getItem("Auth")) {
+            let authData = JSON.parse(localStorage.getItem("Auth"));
+            document.querySelector("#name").value = authData[userId].name;
+        }
+    } else {
+        window.location.href = "login.html";
+    }
+
+    function cartItemsFetch() {
+        if (sessionStorage.getItem("loginStatus")) {
+            let userId = sessionStorage.getItem("loginStatus");
+            if (localStorage.getItem("AddToCart")) {
+                let cartData = JSON.parse(localStorage.getItem("AddToCart"));
+                let grandTotal = 0;
+                let cartCount = 0;
+                for (let i = 0; i < cartData.length; i++) {
+                    if (cartData[i].uid == userId) {
+                        cartCount++;
+                        let total = parseInt(products[cartData[i].pid].pPrice) * parseInt(cartData[i].qty);
+                        grandTotal += total;
+                        document.querySelector("#cartContainerCheckout").innerHTML += `
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">${products[cartData[i].pid].pName}</h6>
+                                <small class="text-muted">${products[cartData[i].pid].pCategory}</small>
+                            </div>
+                            <span class="text-muted">Rs ${total}</span>
+                        </li>
+                        `;
+                    }
+                }
+                document.querySelector("#cartContainerCheckout").innerHTML += `
+                <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (PKR)</span>
+                        <strong>Rs ${grandTotal}</strong>
+                </li>`;
+                document.querySelector("#cartCount").innerHTML = cartCount;
+            }
+        }
+    }
+    cartItemsFetch();
+
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+    });
+</script>
+
+</html>
